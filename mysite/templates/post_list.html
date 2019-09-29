@@ -1,0 +1,14 @@
+<h1>Image list</h1>
+<p><a href="{% url 'logout' %}">logout</a></p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name2</th>
+    </tr>
+    {% for item in data %}
+    <tr> 
+        <td>{{ item.id }}</td>
+        <td><a href="{% url 'sub_list_image' id=item.id %}"><img src="{{item.image.url}}" /></a></td>
+    </tr>
+    {% endfor %}
+</table>
